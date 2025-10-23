@@ -18,21 +18,38 @@ It allows you to ask questions, get explanations for code files, and automatical
 🧰 Setup Instructions
 
 1️⃣ Clone the repository
-```bash```
+```bash
 git clone https://github.com/USERNAME/study_helper_CLI.git
 cd study_helper_CLI
-
+```
 2️⃣ Create and activate a virtual environment
-```bash```
+```bash
 python -m venv venv
 source venv/bin/activate   # Linux / macOS
 venv\Scripts\activate      # Windows
-
+```
 3️⃣ Install dependencies
-```bash```
+```bash
 pip install -r requirements.txt
-
+```
 If you don't have a requirements.txt file yet, you can generate it manually:
-```bash```
+```bash
 pip install colorama google-generativeai
 pip freeze > requirements.txt
+```
+🔑 Configure Your API Key
+
+Create a .env file in the project root and add:
+```env
+GOOGLE_API_KEY=your_api_key_here
+```
+Or set it directly from your terminal:
+```bash
+export GOOGLE_API_KEY="your_api_key_here"
+```
+🚀 Usage
+
+Run the app:
+```bash
+python main.py
+```
