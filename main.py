@@ -1,25 +1,29 @@
 from colorama import Fore, Style, init
 from helper import ask_gemini
+from file_reader import explain_file
 
 init(autoreset=True)
 
 def main():
-    print(Style.BRIGHT + Fore.CYAN + "\n=== Study Helper CLI ===\n")
-    print("Tanya ke aku apa aja, tentang kuliah, tugas, quiz, atau topik belajar lainnya!")
-    print("Ketik 'exit' atau 'quit' untuk keluar.\n")
-    
     while True:
-        topic = input(Style.BRIGHT + Fore.YELLOW + "Masukkan topik kamu: ")
+        print("\n=== Study Helper CLI ===")
+        print("1. Tanya topik ke Gemini")
+        print("2. Jelaskan file di direktori project")
+        print("3. Keluar")
+        choice = input("Pilih menu: ")
 
-        if topic.lower() in ['exit', 'quit']:
-            print(Fore.CYAN + "sampai jumpa, semangat belajarnya 🤗🤗🤗")
+        if choice == "1":
+            prompt = input("Tanya: ")
+            response = ask_gemini(prompt)
+            print(f"\n{Fore.CYAN}Jawaban Gemini:{Style.RESET_ALL}\n{response}")
+        elif choice == "2":
+            file_path = input("Masukkan nama file (contoh: main.py): ")
+            explain_file(file_path)
+        elif choice == "3":
+            print("Sampai jumpa, semangat belajar 🔥")
             break
-        prompt =f"jelaskan tentang {topic}"
-        try:
-            asnwer = ask_gemini(prompt)
-            print(Style.BRIGHT + Fore.GREEN + "\nPenjalasan : \n" + Style.RESET_ALL + asnwer + "\n")
-        except Exception as e:
-            print(Fore.RED + f"Terjadi kesalahan: {e}")
+        else:
+            print("Pilihan tidak valid.")
 
 if __name__ == "__main__":
     main()
