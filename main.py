@@ -20,7 +20,6 @@ def main():
                 print(Fore.RED + "Masukkan topik dulu ya.")
                 continue
             response = ask_gemini(topic)
-            # safety: pastikan response adalah string
             if response is None:
                 print(Fore.RED + "Gagal mendapatkan jawaban dari Gemini.")
             else:
@@ -47,4 +46,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-# End of main.py

@@ -14,13 +14,9 @@ def ask_gemini(prompt):
 def save_history(prompt, response):
     import json, os
     history_file = "history.json"
-
-    # kalau file belum ada, bikin file baru
     if not os.path.exists(history_file):
         with open(history_file, "w") as f:
             json.dump([], f)
-
-    # baca data lama, tapi kalau file kosong → gunakan list kosong
     with open(history_file, "r") as f:
         try:
             history = json.load(f)
@@ -43,8 +39,6 @@ def show_history():
     if not os.path.exists(HISTORY_FILE):
         print("Belum ada history 😶")
         return
-
-    # cek dulu ukuran file
     if os.path.getsize(HISTORY_FILE) == 0:
         print("Belum ada history 😶")
         return

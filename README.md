@@ -1,34 +1,38 @@
-# Study Helper CLI
+🧠 Study Helper CLI
 
-A command-line interface tool designed to help students manage their study materials and tasks.
+**Study Helper CLI** is a simple Python-based command-line tool that helps you study smarter with the power of **Google Gemini AI**.  
+It allows you to ask questions, get explanations for code files, and automatically save your Q&A history for future review.
 
-## Overview
+---
 
-This CLI application assists students in organizing their study materials, tracking assignments, and managing their academic tasks efficiently through simple terminal commands.
+✨ Features
 
-## Features
+- 🔹 Ask any topic to Gemini AI  
+- 🔹 Get explanations for local code files  
+- 🔹 Automatically store all questions and answers in `history.json`  
+- 🔹 View your entire study history directly from the CLI  
+- 🔹 Beautiful colorized terminal output (powered by `colorama`)
 
-- Task management
-- Study material organization
-- Progress tracking
-- Simple and intuitive interface
+---
 
-## Installation
+🧰 Setup Instructions
 
-```bash
-# Installation instructions will be added soon
-```
+1️⃣ Clone the repository
+```bash```
+git clone https://github.com/USERNAME/study_helper_CLI.git
+cd study_helper_CLI
 
-## Usage
+2️⃣ Create and activate a virtual environment
+```bash```
+python -m venv venv
+source venv/bin/activate   # Linux / macOS
+venv\Scripts\activate      # Windows
 
-```bash
-# Usage examples will be added soon
-```
+3️⃣ Install dependencies
+```bash```
+pip install -r requirements.txt
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-[MIT License](LICENSE)
+If you don't have a requirements.txt file yet, you can generate it manually:
+```bash```
+pip install colorama google-generativeai
+pip freeze > requirements.txt
